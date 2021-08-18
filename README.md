@@ -1,9 +1,9 @@
-# Svelte Webpack Starter
+# How to Build and Publish Browser Extension (with Svelte)
 
 A starter template for [Svelte](https://svelte.dev) that comes preconfigured with Webpack, TypeScript, SCSS, Babel,
 Autoprefixer, and HMR.
 
-- [Svelte Webpack Starter](#svelte-webpack-starter)
+- [How to Build and Publish Browser Extension (with Svelte)](#how-to-build-and-publish-browser-extension-with-svelte)
   - [Getting started](#getting-started)
     - [Installation](#installation)
     - [Starting the development server](#starting-the-development-server)
