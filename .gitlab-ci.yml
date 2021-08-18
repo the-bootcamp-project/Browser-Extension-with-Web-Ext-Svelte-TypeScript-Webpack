@@ -1,5 +1,5 @@
 pages:
-    stage: docs
+    stage: deploy
     script:
         - rm -rf public && mkdir public
         - cp -r docs/* public/ && cp -r README.md public/_media/
