@@ -1,176 +1,66 @@
-# How to Build and Publish Browser Extension (with Svelte)
+<a href="https://bootcamp-project.com/" target="_blank"><img src="https://bootcamp-project.com/images/logo.png" align="right" height="200" /></a>
 
-A starter template for [Svelte](https://svelte.dev) that comes preconfigured with Webpack, TypeScript, SCSS, Babel,
-Autoprefixer, and HMR.
+<h1 align="center">How to Build and Publish Browser Extension (with Svelte)</h1>
 
-- [How to Build and Publish Browser Extension (with Svelte)](#how-to-build-and-publish-browser-extension-with-svelte)
-  - [Getting started](#getting-started)
-    - [Installation](#installation)
-    - [Starting the development server](#starting-the-development-server)
-    - [Building for production](#building-for-production)
-    - [Running in production](#running-in-production)
-  - [Usage](#usage)
-    - [Global stylesheets](#global-stylesheets)
-    - [Single page applications](#single-page-applications)
-    - [Browsers list](#browsers-list)
-    - [Babel customization](#babel-customization)
-    - [Source maps in production](#source-maps-in-production)
-    - [Import path aliases](#import-path-aliases)
+<div align="center">
+<img src="https://img.shields.io/badge/Bootcamp-Project-blue?style=for-the-badge" />
+</div>
 
----
+## 👉 About 👈
 
-## Getting started
+**Minimum Viable Product**:
 
-### Installation
+### 😎 Built With 😎
 
-Pull the template files with [`degit`](https://github.com/Rich-Harris/degit) and install dependencies.
+## 📖 Getting Started 📖
 
-**🚀 Webpack 5 (recommended)**
+### ✋ Prerequisites ✋
 
-```bash
-npx degit baileyherbert/svelte-webpack-starter
-npm install
-```
+**Change the project-specific attributes.** See [TODO](TODO.md) for more information.
 
-**🚀 Webpack 4**
+### 💪 Installation 💪
 
-```bash
-npx degit baileyherbert/svelte-webpack-starter#4
-npm install
-```
+## 🚀 Usage 🚀
 
-### Starting the development server
+### 🤓 Static Analysis 🤓
 
-Run the `dev` script to start a live development server with hot module replacement. Then check the output for a link
-to the app, which is usually `http://localhost:8080/`:
+### 🧐 Unit Testing 🧐
 
-```bash
-npm run dev
-```
+### 🤩 Building 🤩
 
-### Building for production
+### 🥳 Deployment 🥳
 
-Run the `build` script to bundle the app for production. The bundle will be created at `/public/build/` and the `public`
-directory will contain all files you need to host the app:
+_For more examples, please refer to the [Documentation](https://rtfm.page)_
 
-```bash
-npm run build
-```
+## ⭐️ Features ⭐️
 
-> 💡 **Tip:** You can quickly test the production build by running `npm start` locally.
+## 📑 Changelog 📑
 
-### Running in production
+See [CHANGELOG](CHANGELOG) for more information.
 
-First upload the following files and folders to your target server:
+## 📋 Roadmap 📋
 
-- `package.json`
-- `package-lock.json`
-- `public`
+See the [open issues](https://gitlab.com/the-bootcamp-project/boilerplates/svelte-browser-extension/-/issues) for a list of proposed features (and known issues).
 
-Then install dependencies:
+## 🤝 Contribute 🤝
 
-```bash
-npm install --production
-```
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-Finally run the `start` command to launch the included web server:
+1. Please read the [contribution guidelines](docs/_media/code_of_conduct.md) first.
+2. Fork the Project
+3. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+4. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+5. Push to the Branch (`git push origin feature/AmazingFeature`)
+6. Open a Pull Request
 
-```bash
-npm start
-```
+## 📜 License 📜
 
----
+Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
-## Usage
+## 💌 Contact 💌
 
-### Global stylesheets
+[Bootcamp contributors](https://bootcamp-project.com/) - `contributors` @ `bootcamp-project` .com
 
-Add one or more global stylesheets to the bundle by editing the `stylesheets` variable at the top of
-`webpack.config.ts`:
+## 🏆 Acknowledgements 🏆
 
-```ts
-const stylesheets = [
-    './src/styles/index.scss'
-];
-```
-
-You can specify `css`, `scss`, and `sass` files here, and they will be compiled and minified as necessary. These styles
-will be added to the beginning of the bundle in the order specified. Svelte's styles will always appear last.
-
-### Single page applications
-
-For single page applications that use history routing instead of hash routing, edit the `package.json` file to serve
-the `index.html` file when a requested file is not found:
-
-- Add the `--history-api-fallback` flag to the `"dev"` command
-- Add the `--single` flag to the `"start"` command.
-
-```json
-"scripts": {
-    "dev": "webpack serve --history-api-fallback",
-    "start": "serve public --listen 8080 --single",
-}
-```
-
-### Browsers list
-
-The bundle will be compiled to run on the browsers specified in `package.json`:
-
-```json
-"browserslist": [
-    "defaults"
-]
-```
-
-The default value is recommended. If you wish to customize this, please refer to the list of
-[example browserslist queries](https://github.com/browserslist/browserslist#full-list).
-
-> 💡 **Note:** This template includes `core-js` and `regenerator-runtime` which means your source code will be
-> transpiled and polyfilled to run on old browsers automatically.
-
-### Babel customization
-
-Production builds are compiled with Babel automatically. If you wish to disable it, edit the `webpack.config.ts` file:
-
-```ts
-const useBabel = false;
-```
-
-Babel is disabled during development in order to improve build speeds. Please enable it manually if you need:
-
-```ts
-const useBabelInDevelopment = true;
-```
-
-### Source maps in production
-
-Source maps are generated automatically during development. They are not included in production builds by default. If
-you wish to change this behavior, edit the `webpack.config.ts` file:
-
-```ts
-const sourceMapsInProduction = true;
-```
-
-### Import path aliases
-
-Define import path aliases from the `tsconfig.json` file. For example:
-
-```json
-"paths": {
-    "@stores/*": ["src/stores/*"]
-}
-```
-
-You can then import files under these aliases and Webpack will resolve them. Your code editor should also use them
-for automatic imports:
-
-```ts
-import { users } from '@stores/users'; // src/stores/users.ts
-```
-
-The root directory is configured as a base path for imports. This means you can also import modules with an absolute
-path from anywhere in the project instead of using a large number of `..` to traverse directories.
-
-```ts
-import { users } from 'src/stores/users';
-```
+Thanks for these awesome resources that were used during the development of the **Bootcamp Project: Browser Extension (with Svelte)**:
