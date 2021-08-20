@@ -1,6 +1,6 @@
 <a href="https://bootcamp-project.com/" target="_blank"><img src="https://bootcamp-project.com/images/logo.png" align="right" height="200" /></a>
 
-<h1 align="center">How to Build and Publish Browser Extension (with Svelte)</h1>
+<h1 align="center">How to Build and Publish Browser Extension with Web-Ext Svelte TypeScript Webpack</h1>
 
 <div align="center">
 <img src="https://img.shields.io/badge/Bootcamp-Project-blue?style=for-the-badge" />
@@ -30,7 +30,7 @@
 
 ### 🥳 Deployment 🥳
 
-_For more examples, please refer to the [Documentation](https://rtfm.page)_
+_For more examples, please refer to the [Documentation](https://browser-extension.rtfm.page)_
 
 ## ⭐️ Features ⭐️
 
@@ -40,7 +40,7 @@ See [CHANGELOG](CHANGELOG) for more information.
 
 ## 📋 Roadmap 📋
 
-See the [open issues](https://gitlab.com/the-bootcamp-project/boilerplates/svelte-browser-extension/-/issues) for a list of proposed features (and known issues).
+See the [open issues](https://gitlab.com/the-bootcamp-project/boilerplates/browser-extension/-/issues) for a list of proposed features (and known issues).
 
 ## 🤝 Contribute 🤝
 
@@ -63,4 +63,4 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 ## 🏆 Acknowledgements 🏆
 
-Thanks for these awesome resources that were used during the development of the **Bootcamp Project: Browser Extension (with Svelte)**:
+Thanks for these awesome resources that were used during the development of the **Bootcamp Project: Browser Extension with Web-Ext Svelte TypeScript Webpack**:

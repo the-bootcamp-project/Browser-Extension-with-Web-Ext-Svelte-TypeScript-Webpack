@@ -1,20 +1,15 @@
-FROM node:latest
+FROM tbcp/nodejs:debian
 
-RUN apt update && apt upgrade -y && apt install -y \
-  git \
-  gcc \
-  make \
-  cmake \
-  python3 \
-  python3-pip \
-  xsel
+USER bootcamp
 
-WORKDIR /home/node/
+WORKDIR /home/bootcamp/
 
-RUN yarn global add node-gyp web-ext webpack webpack-cli webpack-bundle-analyzer typescript concurrently --prefix /usr/local
+RUN sudo yarn global add webpack webpack-cli webpack-bundle-analyzer typescript --prefix /usr/local
 
-# COPY ./package.json /home/node/
+RUN sudo yarn global add web-ext --prefix /usr/local
+
+COPY ./package.json /home/bootcamp/
 
 RUN yarn install
 
-COPY . /home/node/
+COPY . /home/bootcamp/
