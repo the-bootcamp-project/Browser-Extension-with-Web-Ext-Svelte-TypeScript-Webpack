@@ -22,9 +22,6 @@
 		"start": "serve public --listen 8080",
 		"validate": "svelte-check"
 	},
-	"engines": {
-	  "node": "4.0.0"
-	},
 	"browserslist": [
 		"defaults"
 	],
