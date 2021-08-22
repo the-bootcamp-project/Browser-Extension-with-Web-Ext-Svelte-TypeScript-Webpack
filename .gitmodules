@@ -1,0 +1,4 @@
+[submodule "web-application"]
+	path = web-application
+	url = https://gitlab.com/the-bootcamp-project/boilerplates/web-application.git
+	branch = main
