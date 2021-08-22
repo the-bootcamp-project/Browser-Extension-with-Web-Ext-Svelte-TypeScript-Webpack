@@ -8,31 +8,72 @@
 
 ## 👉 About 👈
 
-**Minimum Viable Product**:
+**Minimum Viable Product**: What is what we want?
 
-### 😎 Built With 😎
+- [ ] Build a modern Browser Extension
+  - [ ] for Google Chrome and Firefox
+- [ ] Based on Content and Pages from the Web-Application Project
 
-## 📖 Getting Started 📖
+---
+
+## 🚀 Getting Started 🚀
+
+If you want to learn from the development path, go to the [Documentation](https://browser-extension.rtfm.page/).
+
+Atherwise, glhf...
 
 ### ✋ Prerequisites ✋
 
-**Change the project-specific attributes.** See [TODO](TODO.md) for more information.
+So we talk the same language, is it highly recomendet that we have the same Playground (Development Environment)
+
+**Pleas install the [VSCode Editor](https://code.visualstudio.com/)**
+
+and "Clone" our [GitLab Repository](https://gitlab.com/the-bootcamp-project/boilerplates/browser-extension.git).
+
+```bash
+git clone https://gitlab.com/the-bootcamp-project/boilerplates/browser-extension.git
+```
 
 ### 💪 Installation 💪
+
+```bash
+cd ./browser-extension
+
+yarn istall
+```
 
 ## 🚀 Usage 🚀
 
 ### 🤓 Static Analysis 🤓
 
+```bash
+yarn run lint
+```
+
 ### 🧐 Unit Testing 🧐
 
 ### 🤩 Building 🤩
 
+```bash
+yarn run build
+```
+
 ### 🥳 Deployment 🥳
 
-_For more examples, please refer to the [Documentation](https://browser-extension.rtfm.page)_
+_For more examples, please refer to the [Documentation](https://browser-extension.rtfm.page/)_
 
 ## ⭐️ Features ⭐️
+
+### 😎 Built With 😎
+
+- [Webpack](https://webpack.js.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Svelte](https://svelte.dev/)
+- [web-ext](https://github.com/mozilla/web-ext)
+- [docsify](https://docsify.js.org/)
+- [Mocha](https://mochajs.org/)
+- [Chai](https://www.chaijs.com/)
+- [Docker](https://www.docker.com/)
 
 ## 📑 Changelog 📑
 
@@ -40,7 +81,7 @@ See [CHANGELOG](CHANGELOG) for more information.
 
 ## 📋 Roadmap 📋
 
-See the [open issues](https://gitlab.com/the-bootcamp-project/boilerplates/browser-extension/-/issues) for a list of proposed features (and known issues).
+See the [open issues](https://gitlab.com/the-bootcamp-project/boilerplates/web-application/-/issues) for a list of proposed features (and known issues).
 
 ## 🤝 Contribute 🤝
 
@@ -64,3 +105,9 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 ## 🏆 Acknowledgements 🏆
 
 Thanks for these awesome resources that were used during the development of the **Bootcamp Project: Browser Extension with Web-Ext Svelte TypeScript Webpack**:
+
+- **Git-Submodules**
+  - [Using submodules in Git - Tutorial](https://www.vogella.com/tutorials/GitSubmodules/article.html)
+- **Web-Ext**
+  - [Getting started with web-ext](https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/)
+  - [mozilla/web-ext](https://github.com/mozilla/web-ext)
