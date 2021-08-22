@@ -1,4 +1,0 @@
-[submodule "webview"]
-	path = webview
-	url = https://gitlab.com/the-bootcamp-project/boilerplates/web-application
-	branch = main
