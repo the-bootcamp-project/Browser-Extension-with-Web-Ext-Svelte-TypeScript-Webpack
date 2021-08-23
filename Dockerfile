@@ -2,8 +2,6 @@ FROM tbcp/nodejs:debian
 
 USER bootcamp
 
-RUN git config submodule.recurse true
-
 WORKDIR /home/bootcamp/
 
 RUN sudo yarn global add webpack webpack-cli webpack-bundle-analyzer typescript --prefix /usr/local
