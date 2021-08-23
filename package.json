@@ -5,37 +5,39 @@
 	"private": true,
 	"description": "How to Build and Publish Browser Extension with Web-Ext Svelte TypeScript Webpack",
 	"keywords": [
-	  "How to",
-	  "Build",
-	  "Publish",
-	  "Browser",
-	  "Extension",
-	  "Web-Ext",
-	  "Svelte",
-	  "TypeScript",
-	  "Webpack",
-	  "Boilerplate",
-	  "Step-by-Step"
+		"How to",
+		"Build",
+		"Publish",
+		"Browser",
+		"Extension",
+		"Web-Ext",
+		"Svelte",
+		"TypeScript",
+		"Webpack",
+		"Boilerplate",
+		"Step-by-Step"
 	],
 	"repository": "https://gitlab.com/the-bootcamp-project/boilerplates/browser-extension.git",
 	"author": "Bootcamp contributors <contributors@bootcamp-project.com>",
 	"contributors": [
-	  "John Ollhorn <john@ollhorn.de> (https://ollhorn.de)"
+		"John Ollhorn <john@ollhorn.de> (https://ollhorn.de)"
 	],
 	"browserslist": [
-	  "last 1 version",
-	  "> 1%",
-	  "IE 10"
+		"last 1 version",
+		"> 1%",
+		"IE 10"
 	],
 	"scripts": {
 		"update": "git submodule update --init",
 		"build": "cross-env NODE_ENV=production webpack",
-	  "watch": "webpack --watch",
-	  "preview": "webpack serve --open",
-	  "lint": "eslint src/**/*.{ts,js} --fix",
-	  "test": "echo \"Error: no test specified\" && exit 1"
+		"build:view": "cd ./view/ && cross-env NODE_ENV=production webpack",
+		"watch": "webpack --watch",
+		"preview": "webpack serve --open",
+		"lint": "eslint -c .eslintrc ./src/**/*.{ts,js} --fix",
+		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"devDependencies": {
+		"@types/copy-webpack-plugin": "^8.0.1",
 		"@types/csp-html-webpack-plugin": "^3.0.2",
 		"@types/marked": "^2.0.4",
 		"@types/node": "^16.7.1",
@@ -44,15 +46,14 @@
 		"@typescript-eslint/eslint-plugin": "^4.29.2",
 		"@typescript-eslint/parser": "^4.29.2",
 		"autoprefixer": "^10.3.1",
+		"copy-webpack-plugin": "^9.0.1",
 		"csp-html-webpack-plugin": "^5.1.0",
 		"css-loader": "^6.2.0",
 		"eslint": "^7.32.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-plugin-prettier": "^3.4.1",
 		"eslint-plugin-security": "^1.4.0",
-		"fork-ts-checker-webpack-plugin": "^6.3.2",
 		"html-loader": "^2.1.2",
-		"html-webpack-plugin": "^5.3.2",
 		"json5": "^2.2.0",
 		"markdown-loader": "^6.0.0",
 		"postcss": "^8.3.6",
@@ -73,6 +74,6 @@
 		"yamljs": "^0.3.0"
 	},
 	"dependencies": {
-	  "cross-env": "^7.0.3"
+		"cross-env": "^7.0.3"
 	}
 }

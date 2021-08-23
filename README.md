@@ -113,12 +113,20 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 Thanks for these awesome resources that were used during the development of the **Bootcamp Project: Browser Extension with Web-Ext Svelte TypeScript Webpack**:
 
+- **Webpack**
+  - [Entry Points](https://webpack.js.org/concepts/entry-points/)
+  - [Output](https://webpack.js.org/concepts/output/)
+  - [CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/)
 - **Git-Submodules**
   - [Using submodules in Git - Tutorial](https://www.vogella.com/tutorials/GitSubmodules/article.html)
   - [Rename a git submodule](https://newbedev.com/rename-a-git-submodule)
 - **Web-Ext**
   - [Getting started with web-ext](https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/)
   - [mozilla/web-ext](https://github.com/mozilla/web-ext)
+  - [mdn/webextensions-examples](https://github.com/mdn/webextensions-examples)
+  - [web-ext command reference](https://extensionworkshop.com/documentation/develop/web-ext-command-reference/)
+  - [Boilerplating tools](https://extensionworkshop.com/documentation/develop/browser-extension-development-tools/#boilerplating-tools)
+  - [WebExtension browser API Polyfill](https://github.com/mozilla/webextension-polyfill/#installation)
   - [Manifest v3 update](https://blog.mozilla.org/addons/2021/05/27/manifest-v3-update/?utm_source=newsletter&utm_medium=email&utm_campaign=about-addons-2021-august)
   - [WebExtensions Community Group Charter](https://github.com/w3c/webextensions/blob/main/charter.md)
   - [permissions.onRemoved](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/permissions/onRemoved)

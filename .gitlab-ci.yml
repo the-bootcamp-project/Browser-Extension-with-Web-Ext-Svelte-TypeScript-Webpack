@@ -1,4 +1,4 @@
-image: "tbcp/browserextension"
+image: "tbcp/webext"
 
 before_script:
     - yarn install
