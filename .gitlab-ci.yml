@@ -1,4 +1,4 @@
-image: "tbcp/nodejs:latest"
+image: "tbcp/browserextension"
 
 before_script:
     - yarn install

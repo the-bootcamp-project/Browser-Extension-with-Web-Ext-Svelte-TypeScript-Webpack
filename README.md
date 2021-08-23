@@ -64,6 +64,13 @@ _For more examples, please refer to the [Documentation](https://browser-extensio
 
 ## ⭐️ Features ⭐️
 
+- firefox-android
+- firefox-beta
+- firefox-desktop
+- google-chromium
+- brave
+- brave-beta
+
 ### 😎 Built With 😎
 
 - [Webpack](https://webpack.js.org/)
@@ -108,6 +115,11 @@ Thanks for these awesome resources that were used during the development of the 
 
 - **Git-Submodules**
   - [Using submodules in Git - Tutorial](https://www.vogella.com/tutorials/GitSubmodules/article.html)
+  - [Rename a git submodule](https://newbedev.com/rename-a-git-submodule)
 - **Web-Ext**
   - [Getting started with web-ext](https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/)
   - [mozilla/web-ext](https://github.com/mozilla/web-ext)
+  - [Manifest v3 update](https://blog.mozilla.org/addons/2021/05/27/manifest-v3-update/?utm_source=newsletter&utm_medium=email&utm_campaign=about-addons-2021-august)
+  - [WebExtensions Community Group Charter](https://github.com/w3c/webextensions/blob/main/charter.md)
+  - [permissions.onRemoved](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/permissions/onRemoved)
+  - [addons.mozilla.org API v3 Deprecation](https://blog.mozilla.org/addons/2021/02/01/addons-mozilla-org-api-v3-deprecation/?utm_source=newsletter&utm_medium=email&utm_campaign=about-addons-2021-july)

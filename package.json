@@ -28,7 +28,8 @@
 	  "IE 10"
 	],
 	"scripts": {
-	  "build": "cross-env NODE_ENV=production webpack",
+		"update": "git submodule update --init",
+		"build": "cross-env NODE_ENV=production webpack",
 	  "watch": "webpack --watch",
 	  "preview": "webpack serve --open",
 	  "lint": "eslint src/**/*.{ts,js} --fix",
