@@ -1,4 +1,4 @@
-[submodule "view"]
-	path = view
-	url = https://gitlab.com/the-bootcamp-project/boilerplates/web-application.git
+[submodule "src/components"]
+	path = src/components
+	url = https://gitlab.com/the-bootcamp-project/boilerplates/svelte-components.git
 	branch = main
