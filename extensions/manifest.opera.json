@@ -18,7 +18,6 @@
     "default_popup": "popup.html"
   },
   "options_ui": {
-    "open_in_tab": true,
     "page": "options.html"
   },
   "devtools_page": "devtools-page.html",
@@ -31,7 +30,6 @@
     "tabs",
     "webNavigation",
     "webRequest",
-    "unlimitedStorage",
     "webRequestBlocking",
     "clipboardRead",
     "downloads",
@@ -42,7 +40,6 @@
     "notifications",
     "privacy",
     "topSites",
-    "proxy",
     "nativeMessaging",
     "contextMenus",
     "bookmarks",
@@ -68,24 +65,9 @@
     "include_globs": ["*://*"],
     "exclude_globs": ["*://developer.mozilla.org/*"]
   }],
-  "user_scripts": {
-    "api_script": "apiscript.js"
-  },
   "incognito": "spanning",
   "web_accessible_resources": [],
   "omnibox": {
     "keyword": "mdn"
-  },
-  "chrome_url_overrides": {
-    "newtab": "my-new-tab.html"
-  },
-  "chrome_settings_overrides": {
-    "homepage": "https://developer.mozilla.org/",
-    "search_provider": {
-      "name": "Discogs",
-      "search_url": "https://www.discogs.com/search/?q={searchTerms}",
-      "keyword": "disc",
-      "favicon_url": "https://www.discogs.com/favicon.ico"
-    }
   }
 }

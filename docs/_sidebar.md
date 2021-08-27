@@ -1,5 +1,10 @@
 **Browser Extension**
 
+- [**Getting Started**](/getting_started.md "Getting Started - Build and Publish Browser Extension with Web-Ext Svelte TypeScript Webpack | Bootcamp Project")
+- [**Extension Manifest**](/ext_manifest.md "Extension Manifest - Build and Publish Browser Extension with Web-Ext Svelte TypeScript Webpack | Bootcamp Project")
+- [**Internationalization**](/internationalization.md "Internationalization - Build and Publish Browser Extension with Web-Ext Svelte TypeScript Webpack | Bootcamp Project")
+- [**Performance**](/performance.md "Performance - Build and Publish Browser Extension with Web-Ext Svelte TypeScript Webpack | Bootcamp Project")
+
 **How to work with**
 
 **Contribute**

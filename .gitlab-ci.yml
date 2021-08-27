@@ -14,12 +14,12 @@ stages:
 
 linting:
     stage: Static Analysis
-    script: [yarn run lint]
+    script: [make lint]
     allow_failure: true
 
 build:
     stage: Building
-    script: [yarn run build]
+    script: [make build]
     artifacts:
         paths: [dist]
     only:

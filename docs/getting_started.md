@@ -1,15 +1,15 @@
 # Getting Started
 
 ```git
-git submodule add -b main https://gitlab.com/the-bootcamp-project/boilerplates/web-application.git view
+git submodule add -b main https://gitlab.com/the-bootcamp-project/boilerplates/svelte-components.git src/components
 git submodule update --init
 ```
 
 ```git
 git submodule
-git submodule deinit -f -- web-application
-rm -rf .git/modules/web-application
-git rm -f web-application
+git submodule deinit -f -- view
+rm -rf .git/modules/view
+git rm -f view
 ```
 
 ```bash

@@ -1,0 +1,99 @@
+{
+  "manifest_version": 2,
+  "name": "Borderify",
+  "version": "0.0.1",
+  "short_name": "My Extension",
+  "description": "Replaces pictures with pictures of cats.",
+  "author": "Walt Whitman",
+  "homepage_url": "https://gitlab.com/the-bootcamp-project/boilerplates/browser-extension",
+  "default_locale": "en",
+
+  "browser_action": {
+    "default_title": "Beastify",
+    "default_popup": "popup.html"
+  },
+  "page_action": {
+    "default_icon": {},
+    "default_title": "Beastify",
+    "default_popup": "popup.html"
+  },
+  "options_ui": {
+    "open_in_tab": true,
+    "page": "options.html"
+  },
+  "devtools_page": "devtools-page.html",
+  "permissions": [
+    "activeTab",
+    "alarms",
+    "clipboardWrite",
+    "cookies",
+    "storage",
+    "tabs",
+    "webNavigation",
+    "webRequest",
+    "unlimitedStorage",
+    "webRequestBlocking",
+    "clipboardRead",
+    "downloads",
+    "downloads.open",
+    "geolocation",
+    "idle",
+    "management",
+    "notifications",
+    "privacy",
+    "topSites",
+    "proxy",
+    "nativeMessaging",
+    "contextMenus",
+    "bookmarks",
+    "browsingData",
+    "history",
+    "identity",
+    "sessions",
+    "menus",
+    "browserSettings",
+    "contextualIdentities",
+    "find",
+    "captivePortal",
+    "pkcs11",
+    "search",
+    "tabHide",
+    "theme"
+  ],
+  "optional_permissions": [],
+  "content_security_policy": "script-src 'self'; object-src 'self'; frame-src 'self';",
+  "background": {
+    "scripts": ["browser-polyfill.min.js","background.js"]
+  },
+  "content_scripts": [{
+    "all_frames": false,
+    "js": ["browser-polyfill.min.js","contentScripts.js"],
+    "css": [],
+    "run_at": "document_idle",
+    "matches": ["<all_urls>"],
+    "match_about_blank": false,
+    "exclude_matches": ["*://developer.mozilla.org/*"],
+    "include_globs": ["*://*"],
+    "exclude_globs": ["*://developer.mozilla.org/*"]
+  }],
+  "user_scripts": {
+    "api_script": "apiScript.js"
+  },
+  "incognito": "spanning",
+  "web_accessible_resources": [],
+  "omnibox": {
+    "keyword": "mdn"
+  },
+  "chrome_url_overrides": {
+    "newtab": "new-tab.html"
+  },
+  "chrome_settings_overrides": {
+    "homepage": "https://developer.mozilla.org/",
+    "search_provider": {
+      "name": "Discogs",
+      "search_url": "https://www.discogs.com/search/?q={searchTerms}",
+      "keyword": "disc",
+      "favicon_url": "https://www.discogs.com/favicon.ico"
+    }
+  }
+}

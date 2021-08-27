@@ -4,7 +4,7 @@ USER bootcamp
 
 WORKDIR /home/bootcamp/
 
-RUN sudo yarn global add webpack webpack-cli webpack-bundle-analyzer typescript --prefix /usr/local
+RUN sudo yarn global add webpack webpack-cli webpack-bundle-analyzer typescript cross-env concurrently --prefix /usr/local
 
 RUN sudo yarn global add web-ext docsify-cli@latest --prefix /usr/local
 
