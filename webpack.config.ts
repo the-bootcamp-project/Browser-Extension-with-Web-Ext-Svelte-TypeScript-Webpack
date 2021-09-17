@@ -6,17 +6,8 @@ import CspHtmlWebpackPlugin from 'csp-html-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import CopyPlugin from 'copy-webpack-plugin'
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin'
-// import CompressionPlugin from 'compression-webpack-plugin'
-
-// import marked from 'marked'
-// const renderer = new marked.Renderer()
-// import toml from 'toml'
-// import yaml from 'yamljs'
-// import json5 from 'json5'
 import SveltePreprocess from 'svelte-preprocess'
 import Autoprefixer from 'autoprefixer'
-
-// const PACKAGE_INFO = require(path.resolve(__dirname,'package.json'))
 
 const DIST_DIR  = path.resolve(__dirname,'dist')
 const SRC_DIR   = path.resolve(__dirname,'src')
@@ -32,22 +23,6 @@ const isProduction = mode === 'production'
 const isDevelopment = !isProduction
 
 const WEBEXT_TARGET = process.env['WEBEXT_TARGET'] ?? 'firefox-desktop'
-// const WEBEXT_FIREFOX_DESKTOP_BASE   = ['firefox-desktop','firefox-beta']
-// const WEBEXT_FIREFOX_ANDROID_BASE   = ['firefox-android']
-// const WEBEXT_CHROMIUM_BASE          = ['chromium','edge','brave','brave-beta']
-
-// const getWebExtTarget = function (Webext: string) {
-//     if(Webext === 'firefox-desktop')        { return 'firefox-desktop' }
-//     else if(Webext === 'firefox-android')   { return 'firefox-android' }
-//     else if(Webext === 'firefox-beta')      { return 'firefox-beta' }
-//     else if(Webext === 'chromium')          { return 'chromium' }
-//     else if(Webext === 'edge')              { return 'edge' }
-//     else if(Webext === 'brave')             { return 'brave' }
-//     else if(Webext === 'brave-beta')        { return 'brave-beta' }
-//     else if(Webext === 'opera')             { return 'opera' }
-//     else if(Webext === 'safari')            { return 'safari' }
-//     else                                    { return 'firefox-desktop' }
-// }
 
 const getWebExtDistPath = (Webext: string): string => {
     if(Webext === 'firefox-desktop')        { return path.resolve(DIST_DIR, 'firefox-desktop') }
@@ -92,7 +67,7 @@ const config: Configuration = smp.wrap({
         background:     path.resolve(SRC_DIR,'scripts','Backgroud.ts'),         // Extension Background Script
         contentScripts: path.resolve(SRC_DIR,'scripts','ContentScripts.ts'),    // Extension Content Script
         apiScripts:     path.resolve(SRC_DIR,'scripts','APIScripts.ts'),        // Extension User Script
-        devtoolsPage:     path.resolve(SRC_DIR,'scripts','DevtoolsPage.ts'),        // Extension Devtools Script
+        devtoolsPage:   path.resolve(SRC_DIR,'scripts','DevtoolsPage.ts'),      // Extension Devtools Script
         /* Extension UI Elements */
         options:        path.resolve(UI_DIR,'Options.ts'),      // Options Pages Script
         popup:          path.resolve(UI_DIR,'Popup.ts'),        // Browser Action "Popup" Script
@@ -119,11 +94,6 @@ const config: Configuration = smp.wrap({
             /* Loading Styles */        { test: /\.(c|s(a|c))ss$/, use: ['css-loader', { loader: 'postcss-loader', options: { postcssOptions: { plugins: [Autoprefixer] } } }, 'sass-loader'], include: [SRC_DIR], exclude: [DEP_DIR] },
             /* Loading Images */        { test: /\.(png|svg|jpg|jpeg|gif)$/i, type: 'asset/resource', include: [SRC_DIR], exclude: [DEP_DIR] },
             /* Loading Fonts */         { test: /\.(woff|woff2|eot|ttf|otf)$/i, type: 'asset/resource', include: [SRC_DIR], exclude: [DEP_DIR] }
-            /* Loading HTML */          // { test: /\.html$/i, loader: "html-loader", include: [SRC_DIR], exclude: [DEP_DIR] },
-            /* Loading Markdown */      // { test: /\.md$/, use: [{ loader: "html-loader" },{ loader: "markdown-loader", options: { pedantic: true, renderer }}], include: [SRC_DIR], exclude: [DEP_DIR] },
-            /* Loading Toml */          // { test: /\.toml$/i, type: 'json', parser: { parse: toml.parse }, include: [SRC_DIR], exclude: [DEP_DIR] },
-            /* Loading Yaml */          // { test: /\.yaml$/i, type: 'json', parser: { parse: yaml.parse }, include: [SRC_DIR], exclude: [DEP_DIR] },
-            /* Loading Json */          // { test: /\.json5$/i, type: 'json', parser: { parse: json5.parse }, include: [SRC_DIR], exclude: [DEP_DIR] },
         ],
     },
 
