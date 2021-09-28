@@ -26,6 +26,19 @@ build:
         - develop
         - main
 
+docker:
+  stage: Environment
+  image: docker:latest
+  services:
+    - docker:dind
+  before_script:
+    - echo $CI_DOCKERHUB_PASSWORD | docker login -u "$CI_DOCKERHUB_USER" --password-stdin $CI_DOCKERHUB_REGISTRY
+  script:
+    - docker build --pull -t "index.docker.io/tbcp/webext" .
+    - docker push "index.docker.io/tbcp/webext"
+  only:
+    - staging
+
 pages:
     stage: Deployment
     script:
@@ -34,16 +47,3 @@ pages:
     artifacts:
         paths: [public]
         expire_in: 1 mins
-
-docker:
-  stage: Environment
-  image: docker:latest # Official docker image.
-  services:
-    - docker:dind
-  before_script:
-    - echo $CI_DOCKERHUB_PASSWORD | docker login -u "$CI_DOCKERHUB_USER" --password-stdin $CI_DOCKERHUB_REGISTRY
-  script:
-    - docker build --pull -t "index.docker.io/tbcp/webext:latest" .
-    - docker push "index.docker.io/tbcp/webext:latest"
-  only:
-      - main
