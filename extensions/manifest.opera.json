@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "browser-extension-tbcp",
   "version": "0.0.1",
   "short_name": "Browser Extension with Web-Ext",
@@ -8,11 +8,7 @@
   "homepage_url": "https://gitlab.com/the-bootcamp-project/boilerplates/browser-extension",
   "default_locale": "en",
 
-  "browser_action": {
-    "default_title": "Beastify",
-    "default_popup": "popup.html"
-  },
-  "page_action": {
+  "action": {
     "default_icon": {},
     "default_title": "Beastify",
     "default_popup": "popup.html"
@@ -30,7 +26,6 @@
     "tabs",
     "webNavigation",
     "webRequest",
-    "webRequestBlocking",
     "clipboardRead",
     "downloads",
     "downloads.open",
@@ -46,13 +41,14 @@
     "browsingData",
     "history",
     "identity",
-    "sessions",
-    "dns"
+    "sessions"
   ],
   "optional_permissions": [],
-  "content_security_policy": "script-src 'self'; object-src 'self'; frame-src 'self';",
+  "content_security_policy": {
+    "extension_pages": "base-uri 'self'; default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; font-src 'self'; object-src 'self'; media-src 'self'; frame-src 'self'; child-src 'self'; form-action 'self'; frame-ancestors 'none'; prefetch-src 'none';"
+  },
   "background": {
-    "scripts": ["browser-polyfill.min.js","background.js"]
+    "service_worker": "background.js"
   },
   "content_scripts": [{
     "all_frames": false,

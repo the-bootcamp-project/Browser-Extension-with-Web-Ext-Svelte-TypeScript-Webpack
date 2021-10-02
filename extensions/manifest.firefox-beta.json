@@ -32,7 +32,6 @@
     "webNavigation",
     "webRequest",
     "unlimitedStorage",
-    "webRequestBlocking",
     "clipboardRead",
     "downloads",
     "downloads.open",
@@ -61,7 +60,7 @@
     "theme"
   ],
   "optional_permissions": [],
-  "content_security_policy": "script-src 'self'; object-src 'self'; frame-src 'self';",
+  "content_security_policy": "base-uri 'self'; default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; font-src 'self'; object-src 'self'; media-src 'self'; frame-src 'self'; child-src 'self'; form-action 'self'; frame-ancestors 'none'; prefetch-src 'none';",
   "background": {
     "scripts": ["browser-polyfill.min.js","background.js"]
   },
@@ -85,7 +84,7 @@
     "keyword": "mdn"
   },
   "chrome_url_overrides": {
-    "newtab": "new-tab.html"
+    "newtab": "newtab.html"
   },
   "chrome_settings_overrides": {
     "homepage": "https://developer.mozilla.org/",
@@ -93,7 +92,9 @@
       "name": "Discogs",
       "search_url": "https://www.discogs.com/search/?q={searchTerms}",
       "keyword": "disc",
-      "favicon_url": "https://www.discogs.com/favicon.ico"
+      "favicon_url": "https://www.discogs.com/favicon.ico",
+      "encoding": "UTF-8",
+      "is_default": true
     }
   }
 }

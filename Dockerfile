@@ -11,7 +11,3 @@ RUN sudo yarn global add web-ext docsify-cli@latest --prefix /usr/local
 COPY ./package.json /home/bootcamp/
 
 RUN yarn install
-
-COPY . /home/bootcamp/
-
-CMD [ "docsify", "serve", "." ]

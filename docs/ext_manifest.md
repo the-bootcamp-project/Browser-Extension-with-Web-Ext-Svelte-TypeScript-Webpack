@@ -55,6 +55,8 @@
 
 ## Permissions
 
+- [permissions.getAll()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/permissions/getAll)
+
 ### Chromium
 
 ```json
@@ -69,7 +71,6 @@
     "webNavigation",
     "webRequest",
     "unlimitedStorage",
-    "webRequestBlocking",
     "clipboardRead",
     "downloads",
     "downloads.open",
@@ -86,12 +87,8 @@
     "browsingData",
     "history",
     "identity",
-    "sessions",
-    "dns",
-    "debugger",
-    "pageCapture",
-    "background"
-  ]
+    "sessions"
+  ],
 }
 ```
 
@@ -109,7 +106,6 @@
     "webNavigation",
     "webRequest",
     "unlimitedStorage",
-    "webRequestBlocking",
     "clipboardRead",
     "downloads",
     "downloads.open",
@@ -126,12 +122,8 @@
     "browsingData",
     "history",
     "identity",
-    "sessions",
-    "dns",
-    "debugger",
-    "pageCapture",
-    "background"
-  ]
+    "sessions"
+  ],
 }
 ```
 
@@ -490,3 +482,18 @@
   }
 }
 ```
+
+- [Why I cannot use two or more "browser_action", "page_action" or "app" together?](https://stackoverflow.com/questions/7888915/why-i-cannot-use-two-or-more-browser-action-page-action-or-app-together/7889893)
+- [Manifest file format](https://developer.chrome.com/docs/extensions/mv3/manifest/#app)
+- [chrome.pageAction](https://developer.chrome.com/docs/extensions/reference/pageAction/)
+- [chrome.browserAction](https://developer.chrome.com/docs/extensions/reference/browserAction/)
+- [API Reference](https://developer.chrome.com/docs/extensions/reference/)
+- [Chrome extensions: Use the "background.service_worker" key instead manifest_version 3](https://stackoverflow.com/questions/66055882/chrome-extensions-use-the-background-service-worker-key-instead-manifest-vers)
+- [Manifest V3 migration checklist](https://developer.chrome.com/docs/extensions/mv3/mv3-migration-checklist/)
+- [Migrating to Manifest V3](https://developer.chrome.com/docs/extensions/mv3/intro/mv3-migration/)
+- [Content Security Policy Reference](https://content-security-policy.com/)
+- [How to migrate manifest version 2 to v3 for chrome extension?](https://stackoverflow.com/questions/63308160/how-to-migrate-manifest-version-2-to-v3-for-chrome-extension)
+- [Manifest V3 migration checklist](https://developer.chrome.com/docs/extensions/mv3/mv3-migration-checklist/)
+- [Migrating to Manifest V3](https://developer.chrome.com/docs/extensions/mv3/intro/mv3-migration/)
+- [Bring your extension to life](https://extensionworkshop.com/documentation/develop/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=dev-hub-legacy-menu-link)
+- [Building a cross-browser extension](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Build_a_cross_browser_extension)
