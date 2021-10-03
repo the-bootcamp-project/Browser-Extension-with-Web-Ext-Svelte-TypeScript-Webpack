@@ -57,7 +57,9 @@
 
 - [permissions.getAll()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/permissions/getAll)
 
-### Chromium
+<!-- tabs:start -->
+
+## **Chrome**
 
 ```json
 {
@@ -92,7 +94,7 @@
 }
 ```
 
-### Edge
+## **Edge**
 
 ```json
 {
@@ -127,7 +129,7 @@
 }
 ```
 
-### Firefox Desktop
+## **Firefox**
 
 ```json
 {
@@ -173,7 +175,39 @@
 }
 ```
 
-### Opera
+### Firefox Android
+
+```json
+{
+  "permissions": [
+    "activeTab",
+    "alarms",
+    "clipboardWrite",
+    "cookies",
+    "storage",
+    "tabs",
+    "webNavigation",
+    "webRequest",
+    "unlimitedStorage",
+    "webRequestBlocking",
+    "clipboardRead",
+    "downloads",
+    "downloads.open",
+    "geolocation",
+    "idle",
+    "management",
+    "notifications",
+    "privacy",
+    "topSites",
+    "proxy",
+    "browserSettings",
+    "contentSettings",
+    "contextualIdentities"
+  ]
+}
+```
+
+## **Opera**
 
 ```json
 {
@@ -210,7 +244,7 @@
 }
 ```
 
-### Safari
+## **Safari**
 
 ```json
 {
@@ -228,38 +262,6 @@
     "contextMenus",
     "dns",
     "menus"
-  ]
-}
-```
-
-### Firefox Android
-
-```json
-{
-  "permissions": [
-    "activeTab",
-    "alarms",
-    "clipboardWrite",
-    "cookies",
-    "storage",
-    "tabs",
-    "webNavigation",
-    "webRequest",
-    "unlimitedStorage",
-    "webRequestBlocking",
-    "clipboardRead",
-    "downloads",
-    "downloads.open",
-    "geolocation",
-    "idle",
-    "management",
-    "notifications",
-    "privacy",
-    "topSites",
-    "proxy",
-    "browserSettings",
-    "contentSettings",
-    "contextualIdentities"
   ]
 }
 ```
