@@ -266,6 +266,8 @@
 }
 ```
 
+<!-- tabs:end -->
+
 ## Optional Permissions
 
 ```json
