@@ -1,6 +1,6 @@
 <a href="https://bootcamp-project.com/" target="_blank"><img src="https://bootcamp-project.com/images/logo.png" align="right" height="200" /></a>
 
-<h1 align="center">How to Build and Publish Browser Extension with Web-Ext Svelte TypeScript Webpack</h1>
+<h1 align="center">How to Build and Publish Native Desktop Application with Neutralinojs Svelte TypeScript Webpack</h1>
 
 <div align="center">
 <img src="https://img.shields.io/badge/Bootcamp-Project-blue?style=for-the-badge" />
@@ -8,13 +8,7 @@
 
 ## 👉 About 👈
 
-**Minimum Viable Product**: What is what we want?
-
-- [ ] Build a modern Browser Extension
-  - [ ] for Google Chrome and Firefox
-- [ ] Based on Content and Pages from the Web-Application Project
-
----
+**Minimum Viable Product**:
 
 ## 🚀 Getting Started 🚀
 
@@ -28,35 +22,27 @@ So we talk the same language, is it highly recomendet that we have the same Play
 
 **Pleas install the [VSCode Editor](https://code.visualstudio.com/)**
 
-and "Clone" our [GitLab Repository](https://gitlab.com/the-bootcamp-project/boilerplates/browser-extension.git).
-
 ```bash
-git clone https://gitlab.com/the-bootcamp-project/boilerplates/browser-extension.git
+git submodule add https://gitlab.com/the-bootcamp-project/companion/cli.git .companion
+
+git submodule add -b main --name documentation https://gitlab.com/entropedia/documentation.git docs
+git submodule add -b main --name config https://gitlab.com/entropedia/shared/config.git config
+git submodule add https://gitlab.com/entropedia/shared/libraries.git src/lib
+git submodule add https://gitlab.com/entropedia/shared/components.git src/components
+git submodule add https://gitlab.com/entropedia/shared/pages.git src/pages
+git submodule add https://gitlab.com/entropedia/shared/translations.git src/_locales
+git submodule add https://gitlab.com/entropedia/shared/static.git src/static
 ```
 
 ### 💪 Installation 💪
-
-```bash
-cd ./browser-extension
-
-yarn istall
-```
 
 ## 🚀 Usage 🚀
 
 ### 🤓 Static Analysis 🤓
 
-```bash
-yarn run lint
-```
-
 ### 🧐 Unit Testing 🧐
 
 ### 🤩 Building 🤩
-
-```bash
-yarn run build
-```
 
 ### 🥳 Deployment 🥳
 
@@ -78,8 +64,6 @@ _For more examples, please refer to the [Documentation](https://browser-extensio
 - [Svelte](https://svelte.dev/)
 - [web-ext](https://github.com/mozilla/web-ext)
 - [docsify](https://docsify.js.org/)
-- [Mocha](https://mochajs.org/)
-- [Chai](https://www.chaijs.com/)
 - [Docker](https://www.docker.com/)
 
 ## 📑 Changelog 📑
@@ -113,36 +97,4 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for more information.
 
 Thanks for these awesome resources that were used during the development of the **Bootcamp Project: Browser Extension with Web-Ext Svelte TypeScript Webpack**:
 
-- **Webpack**
-  - [Entry Points](https://webpack.js.org/concepts/entry-points/)
-  - [Output](https://webpack.js.org/concepts/output/)
-  - [CopyWebpackPlugin](https://webpack.js.org/plugins/copy-webpack-plugin/)
-  - [jantimon/html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin)
-  - [survivejs/webpack-merge](https://github.com/survivejs/webpack-merge)
-  - [How to boost the speed of your webpack build?](https://dev.to/slashgear_/how-to-boost-the-speed-of-your-webpack-build-16h0)
-  - [stephencookdev/speed-measure-webpack-plugin](https://github.com/stephencookdev/speed-measure-webpack-plugin)
-- **Git-Submodules**
-  - [Using submodules in Git - Tutorial](https://www.vogella.com/tutorials/GitSubmodules/article.html)
-  - [Rename a git submodule](https://newbedev.com/rename-a-git-submodule)
-- **Web-Ext**
-  - [Getting started with web-ext](https://extensionworkshop.com/documentation/develop/getting-started-with-web-ext/)
-  - [mozilla/web-ext](https://github.com/mozilla/web-ext)
-  - [hiikezoe/web-ext-webpack-plugin](https://github.com/hiikezoe/web-ext-webpack-plugin)
-  - [web-ext command reference](https://extensionworkshop.com/documentation/develop/web-ext-command-reference/)
-  - [WebExtension browser API Polyfill](https://github.com/mozilla/webextension-polyfill/#installation)
-  - [Manifest v3 update](https://blog.mozilla.org/addons/2021/05/27/manifest-v3-update/?utm_source=newsletter&utm_medium=email&utm_campaign=about-addons-2021-august)
-  - [WebExtensions Community Group Charter](https://github.com/w3c/webextensions/blob/main/charter.md)
-  - [permissions.onRemoved](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/permissions/onRemoved)
-  - [addons.mozilla.org API v3 Deprecation](https://blog.mozilla.org/addons/2021/02/01/addons-mozilla-org-api-v3-deprecation/?utm_source=newsletter&utm_medium=email&utm_campaign=about-addons-2021-july)
-  - [mockzilla-webextension](https://lusito.github.io/mockzilla-webextension/)
-  - [Content Security Policy](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_Security_Policy)
-- **Web-Ext Examples**
-  - [Boilerplating tools](https://extensionworkshop.com/documentation/develop/browser-extension-development-tools/#boilerplating-tools)
-  - [mdn/webextensions-examples](https://github.com/mdn/webextensions-examples)
-- **Opera**
-  - [The Basics of Making an Extension](https://dev.opera.com/extensions/basics/)
-  - [paddycarver/crx-build.sh](https://gist.github.com/paddycarver/820351)
-  - [ahwayakchih/crx3](https://github.com/ahwayakchih/crx3)
-  - [phwebi/crx-tools](https://github.com/phwebi/crx-tools)
-  - [oncletom/crx](https://github.com/oncletom/crx)
-  - [Crx Builder for webpack](https://github.com/johnagan/crx-webpack-plugin)
+- [ipfs-companion/package.json](https://github.com/ipfs/ipfs-companion/blob/main/package.json)

@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.158.0/containers/docker-existing-dockerfile
 {
-    "name": "Browser Extensioin Bootcamp",
+    "name": "Browser Extensioin Bootcamp Framework",
 
     // Sets the run context to one level up instead of the .devcontainer folder.
     "context": "../",
@@ -21,7 +21,8 @@
 		"gruntfuggly.todo-tree",
 		"wayou.vscode-todo-highlight",
 		"ms-azuretools.vscode-docker",
-		"svelte.svelte-vscode"
+		"svelte.svelte-vscode",
+		"bradlc.vscode-tailwindcss"
 	],
 
     // Use 'forwardPorts' to make a list of ports inside the container available locally.

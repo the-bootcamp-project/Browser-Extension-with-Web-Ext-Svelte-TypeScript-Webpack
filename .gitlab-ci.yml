@@ -1,55 +1,13 @@
-image: "tbcp/webext"
-
-before_script:
-    - yarn install
-
-stages:
-    - Static Analysis
-    - Unit Testing
-    - Building
-    - Function Testing
-    - Deployment
-    - Documenting
-    - Environment
-
-linting:
-    stage: Static Analysis
-    script: [make lint]
-    allow_failure: true
-    except:
-        - staging
-
-build:
-    stage: Building
-    script: [make build]
-    artifacts:
-        paths: [dist]
-    only:
-        - develop
-        - main
-    except:
-        - staging
-
-docker:
-  stage: Environment
+docker-build:
+  # Official docker image.
   image: docker:latest
+  stage: build
   services:
     - docker:dind
   before_script:
     - echo $CI_DOCKERHUB_PASSWORD | docker login -u "$CI_DOCKERHUB_USER" --password-stdin $CI_DOCKERHUB_REGISTRY
   script:
-    - docker build --pull -t "index.docker.io/tbcp/webext" .
-    - docker push "index.docker.io/tbcp/webext"
+    - docker build --pull -t "index.docker.io/tbcp/webext:latest" .
+    - docker push "index.docker.io/tbcp/webext:latest"
   only:
-    - staging
-
-pages:
-    stage: Deployment
-    script:
-        - rm -rf public && mkdir -p public/demo
-        - cp -r docs/* public/ && cp -r README.md public/_media/
-    artifacts:
-        paths: [public]
-        expire_in: 1 mins
-    except:
-        - staging
+    - main

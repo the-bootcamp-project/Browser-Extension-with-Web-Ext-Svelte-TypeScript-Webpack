@@ -1,4 +1,17 @@
 node_modules
+yarn.lock
+package-lock.json
+
+# Developer tools' files
+.lite_workspace.lua
+
+# binaries and builds
+bin
+bundle
 dist
 artifacts
-yarn.lock
+
+# related files
+stats.json
+.storage
+*.log
