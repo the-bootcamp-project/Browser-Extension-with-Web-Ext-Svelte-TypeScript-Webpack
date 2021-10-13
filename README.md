@@ -23,15 +23,8 @@ So we talk the same language, is it highly recomendet that we have the same Play
 **Pleas install the [VSCode Editor](https://code.visualstudio.com/)**
 
 ```bash
-git submodule add https://gitlab.com/the-bootcamp-project/companion/cli.git .companion
-
-git submodule add -b main --name documentation https://gitlab.com/entropedia/documentation.git docs
-git submodule add -b main --name config https://gitlab.com/entropedia/shared/config.git config
-git submodule add https://gitlab.com/entropedia/shared/libraries.git src/lib
-git submodule add https://gitlab.com/entropedia/shared/components.git src/components
-git submodule add https://gitlab.com/entropedia/shared/pages.git src/pages
-git submodule add https://gitlab.com/entropedia/shared/translations.git src/_locales
-git submodule add https://gitlab.com/entropedia/shared/static.git src/static
+git submodule add -b main --name documentation https://gitlab.com/the-bootcamp-project/frameworks/docs.git docs
+git submodule add -b main --name components https://gitlab.com/the-bootcamp-project/libraries/svelte-components.git src/components
 ```
 
 ### 💪 Installation 💪
