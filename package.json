@@ -26,7 +26,7 @@
 		"defaults"
 	],
 	"scripts": {
-		"bundle": "webpack --node-env production --mode production --config webpack.webext.ts --progress --no-hot --no-watch",
+		"bundle": "webpack --node-env production --mode production --config config/webext/webpack.webext.ts --progress --no-hot --no-watch",
 		"*******": "--------------------------------------------------------------------------------------------------------------",
 		"build-bra": "mkdir -p ./dist/bra && rm -rfv ./dist/bra/* && cp -r ./webext/bra/* ./dist/bra && cp -r ./bundle/* ./dist/bra && web-ext lint -s ./dist/bra && web-ext build -s ./dist/bra -n brave_v$(.companion/companion.sh node_version).zip",
 		"build-brb": "mkdir -p ./dist/brb && rm -rfv ./dist/brb/* && cp -r ./webext/brb/* ./dist/brb && cp -r ./bundle/* ./dist/brb && web-ext lint -s ./dist/brb && web-ext build -s ./dist/brb -n brave-beta_v$(.companion/companion.sh node_version).zip",
@@ -84,7 +84,9 @@
 		"webpack-merge": "^5.8.0"
 	},
 	"dependencies": {
-		"@bootcamp-project/svelte-components": "^0.0.2",
+		"@bootcamp-project/svelte-components": "^0.0.5",
+		"@bootcamp-project/typescript-config": "^0.0.7",
+		"@bootcamp-project/webext-config": "^0.0.5",
 		"ipfs-core": "^0.11.1",
 		"libp2p-websockets": "^0.16.2",
 		"process": "^0.11.10",
