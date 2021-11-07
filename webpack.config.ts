@@ -14,7 +14,7 @@ import autoprefixer from 'autoprefixer'
 const SRC_DIR       = path.resolve(__dirname,'src')
 const BUNDLE_DIR    = path.resolve(__dirname,'bundle')
 const DEP_DIR       = path.resolve(__dirname,'node_modules')
-const SVELTE_DIR    = path.resolve(DEP_DIR,'@bootcamp-project','svelte-components','src')
+const TAILWIND_DIR  = path.resolve(DEP_DIR,'@bootcamp-project','tailwind-config')
 const UI_DIR        = path.resolve(SRC_DIR,'ui')
 const TEMPLATES_DIR = path.resolve(SRC_DIR,'templates')
 
@@ -37,12 +37,10 @@ const webext: Configuration = {
     },
 
     resolve: {
-        modules: [
-            path.join(__dirname, 'node_modules')
-        ],
+        modules: [path.join(__dirname, 'node_modules')],
         alias: { svelte: path.resolve(DEP_DIR,'svelte') },
-        extensions: ['.ts','.js','.json','.svelte'],
-        mainFields: ['main','browser','svelte'],
+        extensions: ['.mjs','.ts','.js','.json','.svelte'],
+        mainFields: ['svelte','browser','module','main'],
         fallback: {
             util: false,
             path: false,
@@ -89,16 +87,8 @@ const webext: Configuration = {
 
     module: {
         rules: [
+            { test: /\.tsx?$/, loader: 'ts-loader', exclude: /node_modules/ },
             {
-                test: /\.ts?$/,
-                loader: 'ts-loader',
-                options: {
-                    happyPackMode: true,
-                    transpileOnly: false
-                },
-                include: [SRC_DIR, SVELTE_DIR],
-                exclude: [DEP_DIR]
-            }, {
                 test: /\.svelte$/,
                 use: {
                     loader: 'svelte-loader',
@@ -108,41 +98,19 @@ const webext: Configuration = {
                         hotReload: !isProduction,
                         preprocess: sveltePreprocess({
                             sourceMap: !isProduction,
-                            postcss: {
-                                plugins: [
-                                    tailwind,
-                                    // But others, like autoprefixer, need to run after
-                                    autoprefixer
-                                ],
-                            },
+                            postcss: { plugins: [tailwind,autoprefixer] },
                         }),
                     }
                 },
-                include: [SRC_DIR, SVELTE_DIR],
-                exclude: [DEP_DIR]
             },
+            { test: /node_modules\/svelte\/.*\.mjs$/, resolve: { fullySpecified: false } },
             {
-                test: /node_modules\/svelte\/.*\.mjs$/,
-                resolve: {
-                    fullySpecified: false
-                }
-            },
-            {
-                test: /\.(css)$/,
+                test: /\.css$/,
                 use:[
                     MiniCssExtractPlugin.loader,
                     "css-loader",
-                    {
-                        loader: "postcss-loader",
-                        options: {
-                            postcssOptions: {
-                                config: path.resolve(DEP_DIR,'@bootcamp-project','tailwind-config','postcss.common.js')
-                            }
-                        }
-                    }
-                ],
-                include: [SRC_DIR, SVELTE_DIR],
-                exclude: [DEP_DIR]
+                    { loader: "postcss-loader", options: { postcssOptions: { config: path.resolve(TAILWIND_DIR,'postcss.config.js') } } }
+                ]
             }
         ]
     },

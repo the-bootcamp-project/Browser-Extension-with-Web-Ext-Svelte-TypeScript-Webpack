@@ -1,24 +1,8 @@
 {
 	"extends": "@bootcamp-project/typescript-config/tsconfig.svelte.json",
-	"compilerOptions": {
-		"baseUrl": "./",		/* Base directory to resolve non-absolute module names. */
-		"rootDir": "src",		/* Specify the root directory of input files. Use to control the output directory structure with --outDir. */
-		"outDir": "dist",		/* Redirect output structure to the directory. */
-		"target": "ES2015",		/* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019', 'ES2020', 'ES2021', or 'ESNEXT'. */
-		"module": "commonjs",	/* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
-		/* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */
-		"paths": {
-			"@assets/*": ["src/assets/*"],
-			"@components/*": ["src/components/*"],
-			"@dev/*": ["src/dev/*"],
-			"@libs/*": ["src/libs/*"],
-			"@services/*": ["src/services/*"],
-			"@types/*": ["src/types/*"],
-			"@utils/*": ["src/utils/*"]
-		},
-		"lib": ["DOM","ES2016","ESNEXT"],	/* Specify library files to be included in the compilation. */
-		"types": ["node", "svelte"]
-	},
-	"include": ["src/**/*"],
+	"include": ["src/**/*","src/node_modules/**/*"],
 	"exclude": ["node_modules/*"],
+	"compilerOptions": {
+		"typeRoots": ["node_modules/@types"]
+	}
 }
