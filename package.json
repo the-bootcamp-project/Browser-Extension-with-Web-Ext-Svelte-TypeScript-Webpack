@@ -104,9 +104,9 @@
 		"webpack-merge": "^5.8.0"
 	},
 	"dependencies": {
-		"@bootcamp-project/svelte-components": "^0.0.10",
+		"@bootcamp-project/svelte-components": "^0.0.16",
 		"@bootcamp-project/tailwind-config": "^0.0.8",
-		"@bootcamp-project/typescript-config": "^0.0.9",
+		"@bootcamp-project/typescript-config": "^0.0.12",
 		"@bootcamp-project/webext-config": "^0.0.5",
 		"@bootcamp-project/webpack-config": "^0.0.9",
 		"ipfs-core": "^0.11.1",
