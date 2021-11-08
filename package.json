@@ -1,5 +1,5 @@
 {
-	"name": "entropedia-companion",
+	"name": "tbcp-browser-extension-framework",
 	"version": "0.0.1",
 	"license": "AGPL-3.0",
 	"private": true,
@@ -17,8 +17,8 @@
 		"Boilerplate",
 		"Step-by-Step"
 	],
-	"repository": "https://gitlab.com/entropedia/webext.git",
-	"author": "Entropedia contributors <contributors@entropedia.org>",
+	"repository": "https://gitlab.com/the-bootcamp-project/frameworks/browser-extension.git",
+	"author": "Bootcamp contributors <contributors@bootcamp-project.com>",
 	"contributors": [
 		"John Ollhorn <john@ollhorn.de> (https://ollhorn.de)"
 	],

@@ -116,7 +116,7 @@ const webext: Configuration = {
     },
 
     plugins: [
-        /* Options Pages */
+        /* Application Pages */
         new HtmlWebpackPlugin({ title: 'devtools',  filename: 'devtools-page.html', template: path.resolve(TEMPLATES_DIR,'devtools-page.html'), chunks:['devtools'] }),
         new HtmlWebpackPlugin({ title: 'options',   filename: 'options.html',       template: path.resolve(TEMPLATES_DIR,'default.html'),       chunks:['options'] }),
         new HtmlWebpackPlugin({ title: 'popup',     filename: 'popup.html',         template: path.resolve(TEMPLATES_DIR,'default.html'),       chunks:['popup'] }),
@@ -124,13 +124,10 @@ const webext: Configuration = {
         new CspHtmlWebpackPlugin({ 'script-src': '', 'style-src': '' }),
         new MiniCssExtractPlugin({ filename: 'style.css', chunkFilename: 'style.css' }),
         new CopyPlugin({ patterns: [
-            /* Copy Styles *{ from: path.resolve(STATIC_DIR,'styles','style.css'), force: true },
             /* Copy Browser Polyfill */
             { from: path.resolve(DEP_DIR,'webextension-polyfill','dist','browser-polyfill.min.js'), force: true },
             /* Copy _locales */
-            { from: path.resolve('_locales'), to: path.resolve(BUNDLE_DIR,'_locales'), force: true },
-            /* Copy WEBEXT_TARGET specific Browser Manifest file */
-            // { from: getWebExtensionManifestFile(WEBEXT_TARGET), to: path.resolve(BUNDLE_DIR,'manifest.json'), force: true }
+            { from: path.resolve('_locales'), to: path.resolve(BUNDLE_DIR,'_locales'), force: true }
         ] }),
         new ForkTsCheckerWebpackPlugin({ eslint: { files: './src/**/*.{ts,js}' } }),
         // fix "process is not defined" error: (do "npm install process" before running the build)
