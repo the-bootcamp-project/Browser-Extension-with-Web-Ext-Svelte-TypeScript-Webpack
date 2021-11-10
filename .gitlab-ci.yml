@@ -1,7 +1,11 @@
+stages:
+    - Environment
+    - Deployment
+
 docker-build:
   # Official docker image.
   image: docker:latest
-  stage: build
+  stage: Environment
   services:
     - docker:dind
   before_script:
@@ -11,3 +15,12 @@ docker-build:
     - docker push "index.docker.io/tbcp/webext:latest"
   only:
     - main
+
+pages:
+  stage: Deployment
+  script:
+    - mkdir ./public
+    - cp -r README.md public/
+  artifacts:
+    paths: [public]
+    expire_in: 1 mins
