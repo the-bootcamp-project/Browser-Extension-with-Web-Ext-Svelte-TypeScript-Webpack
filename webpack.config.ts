@@ -12,7 +12,7 @@ import tailwind from 'tailwindcss'
 import autoprefixer from 'autoprefixer'
 
 const SRC_DIR       = path.resolve(__dirname,'src')
-const BUNDLE_DIR    = path.resolve(__dirname,'bundle')
+const BUNDLE_DIR    = path.resolve(__dirname,'build')
 const DEP_DIR       = path.resolve(__dirname,'node_modules')
 const TAILWIND_DIR  = path.resolve(DEP_DIR,'@bootcamp-project','tailwind-config')
 const UI_DIR        = path.resolve(SRC_DIR,'ui')
@@ -137,8 +137,8 @@ const webext: Configuration = {
         new CopyPlugin({ patterns: [
             /* Copy Browser Polyfill */
             { from: path.resolve(DEP_DIR,'webextension-polyfill','dist','browser-polyfill.min.js'), force: true },
-            /* Copy _locales */
-            { from: path.resolve('_locales'), to: path.resolve(BUNDLE_DIR,'_locales'), force: true }
+            /* Copy i18n */
+            { from: path.resolve('i18n'), to: path.resolve(BUNDLE_DIR,'_locales'), force: true }
         ] }),
         new ForkTsCheckerWebpackPlugin({ eslint: { files: './src/**/*.{ts,js}' } }),
         // fix "process is not defined" error: (do "npm install process" before running the build)

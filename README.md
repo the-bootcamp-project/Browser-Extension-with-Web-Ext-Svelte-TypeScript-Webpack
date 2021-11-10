@@ -24,7 +24,6 @@ So we talk the same language, is it highly recomendet that we have the same Play
 
 ```bash
 git submodule add -b main --name documentation https://gitlab.com/the-bootcamp-project/frameworks/docs.git docs
-git submodule add -b main --name components https://gitlab.com/the-bootcamp-project/libraries/svelte-components.git src/components
 ```
 
 ### 💪 Installation 💪
