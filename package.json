@@ -3,22 +3,25 @@
 	"version": "0.0.1",
 	"license": "AGPL-3.0",
 	"private": true,
-	"description": "A browser extension for the entrance to your Entropedia-Space",
+	"readme": "https://gitlab.com/the-bootcamp-project/frameworks/browser-extension/-/blob/main/README.md",
+	"description": "Framework for a modern Web Application, with Web-Ext, TypeScript, Svelte, TailwindCSS and Webpack",
 	"keywords": [
-		"How to",
-		"Build",
-		"Publish",
-		"Browser Extension",
-		"Web-Ext",
-		"Svelte",
-		"TailwindCSS",
-		"TypeScript",
-		"Webpack",
-		"Boilerplate",
-		"Step-by-Step"
+		"How to", "Build", "Publish", "Modern",
+		"web-ext", "Browser Extension",
+		"Svelte", "TailwindCSS", "TypeScript", "Webpack",
+		"Boilerplate", "Step-by-Step"
 	],
+	"homepage": "https://gitlab.com/the-bootcamp-project/frameworks/browser-extension",
 	"repository": "https://gitlab.com/the-bootcamp-project/frameworks/browser-extension.git",
+	"bugs": {
+		"url": "https://gitlab.com/the-bootcamp-project/frameworks/browser-extension/-/issues",
+		"email": "contributors@bootcamp-project.com"
+	},
 	"author": "Bootcamp contributors <contributors@bootcamp-project.com>",
+	"maintainers": [
+		"Bootcamp contributors <contributors@bootcamp-project.com>",
+		"John Ollhorn <john@ollhorn.de> (https://ollhorn.de)"
+	],
 	"contributors": [
 		"John Ollhorn <john@ollhorn.de> (https://ollhorn.de)"
 	],
