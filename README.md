@@ -49,6 +49,7 @@ _For more examples, please refer to the [Documentation](https://frameworks.bootc
 
 ### 😎 Built With 😎
 
+- [Mozilla: WebExtensions](https://developer.mozilla.org/de/docs/Mozilla/Add-ons/WebExtensions)
 - [Webpack](https://webpack.js.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Svelte](https://svelte.dev/)
@@ -80,3 +81,8 @@ See [LICENSE](https://frameworks.bootcamp-project.com/#/LICENSE) for more inform
 ## 🏆 Acknowledgements 🏆
 
 Thanks for these awesome resources that were used during the development of the **Bootcamp Project: Modern Application Frameworks**:
+
+- [Mozilla: WebExtensions](https://developer.mozilla.org/de/docs/Mozilla/Add-ons/WebExtensions)
+- [What ECMAScript version is supported by Chrome extensions runtime?](https://stackoverflow.com/questions/52089973/what-ecmascript-version-is-supported-by-chrome-extensions-runtime)
+- [Developing your web extension with the best tools](https://medium.com/@Morikko/developing-your-web-extension-with-the-best-tools-213207c2b6b5)
+- [How I built a browser extension in 2021 (using modern tools and libraries)](https://siegelfabian.de/posts/2021/02/how-i-built-a-browser-extension-in-2021/)
