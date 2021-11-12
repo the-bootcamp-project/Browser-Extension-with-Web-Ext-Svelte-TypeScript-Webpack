@@ -9,21 +9,21 @@
 **Minimum Viable Product**: What is what we want?
 
 - [X] Modern Web techniques
+  - [X] TypeScript Support
   - [X] Svelte Components
     - [X] Storybook UI Testing and Presentation
   - [X] TailwindCSS Styling
-  - [X] TypeScript Support
   - [X] with Webpack bundeling
 - [X] a Static Application Security Code Analyzing
   - [X] with ESLint (eslint-plugin-security)
 - [ ] A Test Driven Development approche
   - [ ] with Mocha and Chai
-- [X] a on Board Documentation for our Users
-- [X] CI/CD
+- [X] Automation (CI/CD)
   - [ ] Linting
   - [ ] Building
   - [ ] Packaging
   - [ ] Deployment / Publishing
+- [X] a on Board Documentation for our Users
 
 ---
 
@@ -33,19 +33,76 @@ _For more examples, please refer to the [Documentation](https://frameworks.bootc
 
 ### ✋ Prerequisites ✋
 
+Ensure you have
+
+- [Node.js](https://nodejs.org) 10 or later installed
+- [Yarn](https://yarnpkg.com) v1 or v2 installed
+
 ### 💪 Installation 💪
+
+- `yarn install` to install dependencies.
 
 ## 😏 Usage 😏
 
-### 🤓 Static Analysis 🤓
+Then run the following:
 
-### 🧐 Unit Testing 🧐
+- `yarn run dev:chrome` to start the development server for chrome extension
+- `yarn run dev:firefox` to start the development server for firefox addon
+- `yarn run dev:opera` to start the development server for opera extension
+
+### 🤓 Linting 🤓
+
+### 🧐 Testing 🧐
 
 ### 🤩 Building 🤩
 
-### 🥳 Deployment 🥳
+Then run the following:
+
+- `yarn run build:chrome` to build chrome extension
+- `yarn run build:firefox` to build firefox addon
+- `yarn run build:opera` to build opera extension
+- `yarn run build` builds and packs extensions all at once to extension/ directory
+
+Check here for more details: [https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/](https://extensionworkshop.com/documentation/develop/temporary-installation-in-firefox/)
+
+### 🥳 Publishing 🥳
+
+| Browsers | Web store |
+| -------------- | --------------- |
+| Chrome | [https://developer.chrome.com/webstore/publish](https://developer.chrome.com/webstore/publish) |
+| Microsoft Edge | [https://docs.microsoft.com/en-us/microsoft-edge/extensions-chromium/publish/publish-extension](https://docs.microsoft.com/en-us/microsoft-edge/extensions-chromium/publish/publish-extension) |
+| Firefox | [https://extensionworkshop.com/documentation/publish/submitting-an-add-on](https://extensionworkshop.com/documentation/publish/submitting-an-add-on) |
+
+It's possible to automatically publish to both the Chrome Web Store and Mozilla Addons at once by adding these secrets on GitHub Actions:
+
+1. `CLIENT_ID`, `CLIENT_SECRET`, and `REFRESH_TOKEN` from [Google APIs][link-cws-keys].
+2. `WEB_EXT_API_KEY`, and `WEB_EXT_API_SECRET` from [AMO][link-amo-keys].
+
+Also include `EXTENSION_ID` in the secrets ([how to find it](https://stackoverflow.com/a/8946415/288906)) and add Mozilla’s [`gecko.id`](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/browser_specific_settings) to `manifest.json`.
+
+The GitHub Actions workflow will:
+
+1. Build the extension
+2. Create a version number based on the current UTC date time, like [`19.6.16`](https://github.com/fregante/daily-version-action) and sets it in the manifest.json
+3. Deploy it to both stores
+
+#### Auto-publishing
+
+Thanks to the included [GitHub Action Workflows](.github/workflows), if you set up those secrets in the repo's Settings, the deployment will automatically happen:
+
+- on a schedule, by default [every week](.github/workflows/deploy-automatic.yml) (but only if there are any new commits in the last tag)
+- manually, by clicking ["Run workflow"](https://github.blog/changelog/2020-07-06-github-actions-manual-triggers-with-workflow_dispatch/) in the Actions tab.
 
 ## ⭐️ Features ⭐️
+
+- Cross Browser Support (Web-Extensions API)
+- Promise-based `browser.*` APIs webextension-polyfill
+- ES6 modules support
+- Node.js modules support
+- TypeScript by default
+- Svelte UI Library by default
+- Auto-publishing with auto-versioning and support for manual releases
+- Extensive configuration documentation
 
 ### 😎 Built With 😎
 
@@ -54,13 +111,17 @@ _For more examples, please refer to the [Documentation](https://frameworks.bootc
 - [TypeScript](https://www.typescriptlang.org/)
 - [Svelte](https://svelte.dev/)
 - [IPFS](https://ipfs.io/)
-- [docsify](https://docsify.js.org/)
 
 ## 📑 Changelog 📑
 
 See [CHANGELOG](CHANGELOG) for more information.
 
 ## 📋 Roadmap 📋
+
+- Smart reload
+- Auto packs browser specific build files
+- Auto-syncing options
+- Automatic build on code changes
 
 See the [open issues](https://gitlab.com/groups/the-bootcamp-project/frameworks/-/issues) for a list of proposed features (and known issues).
 
@@ -83,6 +144,3 @@ See [LICENSE](https://frameworks.bootcamp-project.com/#/LICENSE) for more inform
 Thanks for these awesome resources that were used during the development of the **Bootcamp Project: Modern Application Frameworks**:
 
 - [Mozilla: WebExtensions](https://developer.mozilla.org/de/docs/Mozilla/Add-ons/WebExtensions)
-- [What ECMAScript version is supported by Chrome extensions runtime?](https://stackoverflow.com/questions/52089973/what-ecmascript-version-is-supported-by-chrome-extensions-runtime)
-- [Developing your web extension with the best tools](https://medium.com/@Morikko/developing-your-web-extension-with-the-best-tools-213207c2b6b5)
-- [How I built a browser extension in 2021 (using modern tools and libraries)](https://siegelfabian.de/posts/2021/02/how-i-built-a-browser-extension-in-2021/)
