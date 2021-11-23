@@ -1,4 +1,4 @@
-<a href="https://bootcamp-project.com/" target="_blank"><img src="https://bootcamp-project.com/images/logo.png" align="right" height="200" /></a>
+<a href="https://bootcamp-project.com/" target="_blank"><img src="https://bootcamp-project.com/tbcp.svg" align="right" height="200" /></a>
 
 <h1 align="center">How to Build and Publish Modern Browser Extension with Svelte TailwindCSS TypeScript and Webpack</h1>
 
