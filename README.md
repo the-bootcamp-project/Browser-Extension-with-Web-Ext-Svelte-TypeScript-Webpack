@@ -182,7 +182,7 @@ See [Publishing Documentation][Repo_Publishing_Docs]
 
 <table>
 <tr>
-<td><a href="https://extensionworkshop.com/" target="_blank"><img src="https://cdr.bootcamp-project.com/logos/brands/mozilla.svg" alt="Web-Ext" width="200"/></a></td>
+<td><a href="https://extensionworkshop.com/" target="_blank"><img src="https://cdr.bootcamp-project.com/logos/brand/mozilla.svg" alt="Web-Ext" width="200"/></a></td>
 <td><a href="https://typescriptlang.org/" target="_blank"><img src="https://cdr.bootcamp-project.com/logos/programming/typescript.svg" alt="TypeScript" width="200"/></a></td>
 <td><a href="https://eslint.org/" target="_blank"><img src="https://cdr.bootcamp-project.com/logos/programming/eslint.svg" alt="eslint" width="200"/></a></td>
 <td><a href="https://prettier.io/" target="_blank"><img src="https://cdr.bootcamp-project.com/logos/programming/prettier.svg" alt="prettier" width="200"/></a></td>
