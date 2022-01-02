@@ -38,13 +38,13 @@
 		"defaults"
 	],
 	"scripts": {
-		"clean": "rimraf ./node_modules build dist artifacts yarn.lock",
-		"pre:submodules:docs": "git submodule add -b main --name documentation https://gitlab.com/the-bootcamp-project/frameworks/docs.git docs",
-		"pre:submodules:i18n": "git submodule add -b main --name i18n https://gitlab.com/the-bootcamp-project/libraries/i18n.git i18n",
-		"pre:submodules:init": "git submodule update --init",
-		"pre:submodules:merge": "git submodule update --recursive --remote --merge",
-		"preinstall": "yarn run clean",
+		"cleaning": "********************************************************************************************************",
+		"clean:cache": "yarn cache clean",
+		"clean": "rm -rf node_modules build dist artifacts temp coverage yarn.lock yarn*.log stats.json",
+		"installation": "****************************************************************************************************",
+		"develop": "*********************************************************************************************************",
 		"dev": "webpack serve --node-env development --mode development",
+		"bundling": "********************************************************************************************************",
 		"bundle": "webpack --node-env production --mode production --progress --no-hot --no-watch",
 		"build-bra": "./build.ext.sh brave",
 		"build-brb": "./build.ext.sh brave-beta",
@@ -55,6 +55,7 @@
 		"build-ffd": "./build.ext.sh firefox-desktop",
 		"build-ope": "./build.ext.sh opera",
 		"build-saf": "./build.ext.sh safari",
+		"linting": "*********************************************************************************************************",
 		"lint-bra": "web-ext lint -s ./dist/brave",
 		"lint-brb": "web-ext lint -s ./dist/brave-beta",
 		"lint-chr": "web-ext lint -s ./dist/chromium",
@@ -64,6 +65,10 @@
 		"lint-ffd": "web-ext lint -s ./dist/firefox-desktop",
 		"lint-ope": "web-ext lint -s ./dist/opera",
 		"lint-saf": "web-ext lint -s ./dist/safari",
+		"testing": "*********************************************************************************************************",
+		"building": "********************************************************************************************************",
+		"build:stats": "webpack --node-env production --mode production --progress --no-hot --no-watch --profile --json > stats.json && webpack-bundle-analyzer stats.json",
+		"packaging": "*******************************************************************************************************",
 		"pack-bra": "web-ext build -s ./dist/brave -n brave_v$(~/.local/bin/.companion/companion.sh node_version).zip",
 		"pack-brb": "web-ext build -s ./dist/brave-beta -n brave-beta_v$(~/.local/bin/.companion/companion.sh node_version).zip",
 		"pack-chr": "web-ext build -s ./dist/chromium -n chromium_v$(~/.local/bin/.companion/companion.sh node_version).zip",
@@ -73,8 +78,7 @@
 		"pack-ffd": "web-ext build -s ./dist/firefox-desktop -n firefox-desktop_v$(~/.local/bin/.companion/companion.sh node_version).zip",
 		"pack-ope": "web-ext build -s ./dist/opera -n opera_v$(~/.local/bin/.companion/companion.sh node_version).zip",
 		"pack-saf": "web-ext build -s ./dist/safari -n safari_v$(~/.local/bin/.companion/companion.sh node_version).zip",
-		"measure-bundle": "webpack --node-env production --mode production --progress --no-hot --no-watch --profile --json > stats.json && webpack-bundle-analyzer stats.json",
-		"test": "mocha './tests/**/*.test.js'"
+		"versioning": "******************************************************************************************************"
 	},
 	"devDependencies": {
 		"@tsconfig/svelte": "^2.0.1",
