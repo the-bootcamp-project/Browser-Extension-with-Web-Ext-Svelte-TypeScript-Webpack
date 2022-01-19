@@ -1,0 +1,26 @@
+{
+  "extensionName": {
+    "message": "Entropedia Companion",
+    "description": "Name of the extension."
+  },
+  "extensionShortName": {
+    "message": "Your Entropedia-Space Companion",
+    "description": "Short Name of the extension."
+  },
+  "extensionDescription": {
+    "message": "A browser extension for the entrance to your Entropedia-Space",
+    "description": "Description of the extension."
+  },
+  "extensionAuthor": {
+    "message": "Entropedia contributors <contributors@entropedia.org>",
+    "description": "Author of the extension."
+  },
+  "extensionHomepage": {
+    "message": "https://gitlab.com/entropedia/webext",
+    "description": "Homepage of the extension."
+  },
+  "extensionActionTitle": {
+    "message": "Companion",
+    "description": "Action Title of the extension."
+  }
+}
