@@ -8,11 +8,11 @@ function prepare_dist() {
 }
 
 function copy_manifest() {
-    cp -r node_modules/@bootcamp-project/webext-config/${EXTENSION}/* ./dist/${EXTENSION}
+    cp -r node_modules/@bootcamp-project/webext-config/src/${EXTENSION}/* ./dist/${EXTENSION}
 }
 
 function copy_sourcecode() {
-    cp -r ./bundle/* ./dist/${EXTENSION}
+    cp -r ./build/* ./dist/${EXTENSION}
 }
 
 # web-ext lint -s ./dist/brave
