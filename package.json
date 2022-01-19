@@ -68,7 +68,7 @@
 		"test:coverage": "yarn test:unit --coverage",
 		"test:unit": "jest",
 		"building": "********************************************************************************************************",
-		"prebuild": "yarn lint:fix",
+		"prebuild": "yarn lint:format",
 		"postbuild": "yarn build:tailwind",
 		"build": "webpack --node-env production --mode production --no-hot --no-watch",
 		"build:tailwind": "tailwindcss build -i src/tailwind.css -o src/assets/tailwind.css",
