@@ -22,13 +22,13 @@ const SCRIPTS_DIR = path.resolve(SRC_DIR, 'scripts')
 const DEST_DIR = path.resolve(ROOT_DIR, 'build')
 // const POSTCSS_CONFIG = path.resolve(ROOT_DIR, 'postcss.config.js')
 const TEMPLATES_DIR = path.resolve(SRC_DIR, 'templates')
-const POLYFILL_DIR = path.resolve(ROOT_DIR, 'node_modules','webextension-polyfill','dist','browser-polyfill.min.js')
+const POLYFILL_DIR = path.resolve(ROOT_DIR, 'node_modules', 'webextension-polyfill', 'dist', 'browser-polyfill.min.js')
 
 const mode = process.env['NODE_ENV'] ?? 'development'
 const isProduction = mode === 'production'
 
-const DEV_CSP = { 'base-uri': "'self'", 'script-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"], 'style-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"], }
-const PROD_CSP = { 'base-uri': "'self'", 'script-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"], 'style-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"], }
+const DEV_CSP = { 'base-uri': "'self'", 'script-src': ["'self'", "'unsafe-eval'"], 'style-src': ["'self'", "'unsafe-eval'"], }
+const PROD_CSP = { 'base-uri': "'self'", 'script-src': ["'self'", "'unsafe-eval'"], 'style-src': ["'self'", "'unsafe-eval'"], }
 const CSP = isProduction ? PROD_CSP : DEV_CSP
 
 const Config: webpack.Configuration | webpackdev.Configuration = {
@@ -37,14 +37,15 @@ const Config: webpack.Configuration | webpackdev.Configuration = {
     entry: {
         /* App Pages */
         index: path.resolve(SRC_DIR, 'app.ts'),
-
+        /* WebExt UI Components */
         devtools: path.resolve(UI_DIR, 'Devtools.ts'),
         options: path.resolve(UI_DIR, 'Options.ts'),
         popup: path.resolve(UI_DIR, 'Popup.ts'),
-
+        newtab: path.resolve(UI_DIR, 'NewTab.ts'),
+        /* WebExt Runtime Scripts */
         background: path.resolve(SCRIPTS_DIR, 'Backgroud.ts'),
         contentScripts: path.resolve(SCRIPTS_DIR, 'ContentScripts.ts'),
-        DevtoolsPage: path.resolve(SCRIPTS_DIR, 'DevtoolsPage.ts')
+        devtoolsPage: path.resolve(SCRIPTS_DIR, 'DevtoolsPage.ts')
     },
 
     output: { filename: '[name].js', path: DEST_DIR, clean: true },
@@ -75,11 +76,13 @@ const Config: webpack.Configuration | webpackdev.Configuration = {
     plugins: [
         /* Application Pages */
         new HtmlWebpackPlugin({ title: 'index', filename: 'index.html', template: path.resolve(TEMPLATES_DIR, 'default.html'), chunks: ['index'] }),
-        new HtmlWebpackPlugin({ title: 'devtools', filename: 'devtools-page.html', template: path.resolve(TEMPLATES_DIR, 'default.html'), chunks: ['devtools'] }),
+        new HtmlWebpackPlugin({ title: 'devtools', filename: 'devtools-page.html', template: path.resolve(TEMPLATES_DIR, 'default.html'), chunks: ['devtoolsPage'] }),
+        new HtmlWebpackPlugin({ title: 'devtools', filename: 'devtools.html', template: path.resolve(TEMPLATES_DIR, 'default.html'), chunks: ['devtools'] }),
         new HtmlWebpackPlugin({ title: 'options', filename: 'options.html', template: path.resolve(TEMPLATES_DIR, 'default.html'), chunks: ['options'] }),
         new HtmlWebpackPlugin({ title: 'popup', filename: 'popup.html', template: path.resolve(TEMPLATES_DIR, 'default.html'), chunks: ['popup'] }),
-        new CopyPlugin({patterns: [{ from: STATIC_DIR, to: DEST_DIR }]}),
-        new CopyPlugin({patterns: [{ from: POLYFILL_DIR, to: DEST_DIR }]}),
+        new HtmlWebpackPlugin({ title: 'newtab', filename: 'newtab.html', template: path.resolve(TEMPLATES_DIR, 'default.html'), chunks: ['newtab'] }),
+        new CopyPlugin({ patterns: [{ from: STATIC_DIR, to: DEST_DIR }] }),
+        new CopyPlugin({ patterns: [{ from: POLYFILL_DIR, to: DEST_DIR }] }),
         /* Generate Content Security Policy Meta Tags */
         new CspHtmlWebpackPlugin(CSP),
         new ForkTsCheckerWebpackPlugin({ eslint: { files: './src/**/*.{ts,js}' } }),
