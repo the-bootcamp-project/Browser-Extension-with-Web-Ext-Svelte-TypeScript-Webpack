@@ -1,14 +1,14 @@
 import browser from 'webextension-polyfill'
 
 function handleShown() {
-	console.log('panel is being shown')
+	console.log('Hello World from DevTools')
 }
 function handleHidden() {
-	console.log('panel is being hidden')
+	console.log('Bye-bye, from DevTools')
 }
 
 browser.devtools.panels
-	.create('My Panel', 'icons/star.png', 'devtools.html')
+	.create('WebExt DevTools', 'favicon.ico', 'devtools.html')
 	.then(newPanel => {
 		newPanel.onShown.addListener(handleShown)
 		newPanel.onHidden.addListener(handleHidden)
