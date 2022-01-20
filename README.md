@@ -165,6 +165,10 @@ Run the following:
 
 *if you want to use npm, replace `yarn ...` with `npm ...`*
 
+```bash
+chmod +x build.ext.sh
+```
+
 See [Building Documentation][Repo_Building_Docs]
 
 ### 🥳 Publishing 🥳
