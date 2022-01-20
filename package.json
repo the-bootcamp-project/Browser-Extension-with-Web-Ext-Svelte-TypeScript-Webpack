@@ -20,10 +20,10 @@
 		"Webpack",
 		"TBCP"
 	],
-	"homepage": "https://gitlab.com/the-bootcamp-project/frameworks/web-application",
-	"repository": "https://gitlab.com/the-bootcamp-project/frameworks/web-application.git",
+	"homepage": "https://gitlab.com/the-bootcamp-project/frameworks/browser-extension",
+	"repository": "https://gitlab.com/the-bootcamp-project/frameworks/browser-extension.git",
 	"bugs": {
-		"url": "https://gitlab.com/the-bootcamp-project/frameworks/web-application/-/issues",
+		"url": "https://gitlab.com/the-bootcamp-project/frameworks/browser-extension/-/issues",
 		"email": "contributors@bootcamp-project.com"
 	},
 	"author": "Bootcamp contributors <contributors@bootcamp-project.com>",
