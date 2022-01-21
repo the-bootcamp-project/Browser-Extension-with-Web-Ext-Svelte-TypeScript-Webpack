@@ -8,7 +8,7 @@ function handleHidden() {
 }
 
 browser.devtools.panels
-	.create('WebExt DevTools', 'favicon.ico', 'devtools.html')
+	.create(browser.i18n.getMessage('extensionName'), 'favicon.ico', 'devtools.html')
 	.then(newPanel => {
 		newPanel.onShown.addListener(handleShown)
 		newPanel.onHidden.addListener(handleHidden)
