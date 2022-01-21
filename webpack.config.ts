@@ -27,8 +27,8 @@ const POLYFILL_DIR = path.resolve(ROOT_DIR, 'node_modules', 'webextension-polyfi
 const mode = process.env['NODE_ENV'] ?? 'development'
 const isProduction = mode === 'production'
 
-const DEV_CSP = { 'base-uri': "'self'", 'script-src': ["'self'", "'unsafe-eval'"], 'style-src': ["'self'", "'unsafe-eval'"], }
-const PROD_CSP = { 'base-uri': "'self'", 'script-src': ["'self'", "'unsafe-eval'"], 'style-src': ["'self'", "'unsafe-eval'"], }
+const DEV_CSP = { 'base-uri': "'self'", 'script-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"], 'style-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"], }
+const PROD_CSP = { 'base-uri': "'self'", 'script-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"], 'style-src': ["'unsafe-inline'", "'self'", "'unsafe-eval'"], }
 const CSP = isProduction ? PROD_CSP : DEV_CSP
 
 const Config: webpack.Configuration | webpackdev.Configuration = {
