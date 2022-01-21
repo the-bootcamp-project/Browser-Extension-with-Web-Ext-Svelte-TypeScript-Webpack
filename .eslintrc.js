@@ -3,6 +3,10 @@
 const ESlintConfig = require('@bootcamp-project/svelte-config').ESLintSvelteTypeScriptConfig
 module.exports = {
     ...ESlintConfig,
+    env: {
+        ...ESlintConfig.env,
+        "webextensions": true
+    },
     rules: {
         // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
         // e.g. "@typescript-eslint/explicit-function-return-type": "off",
@@ -11,6 +15,6 @@ module.exports = {
         '@typescript-eslint/no-unsafe-call': 'off',
         '@typescript-eslint/no-unsafe-argument': 'off',
         '@typescript-eslint/no-explicit-any': 'off',
-		'pii/no-dob': 'off',
+        'pii/no-dob': 'off',
     }
 }
