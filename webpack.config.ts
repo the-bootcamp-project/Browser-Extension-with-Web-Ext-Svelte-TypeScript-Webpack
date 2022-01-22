@@ -48,6 +48,10 @@ const Config: webpack.Configuration | webpackdev.Configuration = {
         devtoolsPage: path.resolve(SCRIPTS_DIR, 'DevtoolsPage.ts')
     },
 
+    resolve: {
+        extensions: ['.ts']
+    },
+
     output: { filename: '[name].js', path: DEST_DIR, clean: true },
 
     module: {
