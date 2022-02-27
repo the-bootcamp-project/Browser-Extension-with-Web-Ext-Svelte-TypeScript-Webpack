@@ -33,7 +33,7 @@ const CSP = isProduction ? PROD_CSP : DEV_CSP
 
 const Config: webpack.Configuration | webpackdev.Configuration = {
     context: path.resolve(ROOT_DIR),
-    devtool: 'inline-source-map',
+    devtool: isProduction ? false : 'inline-source-map',
     entry: {
         /* App Pages */
         index: path.resolve(SRC_DIR, 'app.ts'),
